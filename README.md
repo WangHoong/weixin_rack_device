@@ -1,4 +1,4 @@
-微信公众平台 开放消息接口 Rack Middleware
+修改微信公众平台 开放消息接口 Rack Middleware
 ========================================
 
 [![Build Status](https://travis-ci.org/wolfg1969/rack-weixin.png?branch=master)](https://travis-ci.org/wolfg1969/rack-weixin) [![Gem Version](https://badge.fury.io/rb/rack-weixin.png)](http://badge.fury.io/rb/rack-weixin)
