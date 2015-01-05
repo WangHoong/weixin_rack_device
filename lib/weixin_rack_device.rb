@@ -54,4 +54,31 @@ module Weixin
     msg.ArticleCount = items.count
     msg.to_xml
   end
+  #rom, to,msg.MsgType,msg.DeviceType,msg.DeviceID,msg.OpType
+  def subscribe_status_msg(to,from,time,device_type,device_id,op_type,msg_type='device_status') 
+    msg = SubscribeMessage.new
+    msg.ToUserName   = to
+    msg.FromUserName = from
+    msg.CreateTime = time
+    msg.MsgType   = msg_type
+    msg.DeviceType = device_type
+    msg.DeviceID = device_id
+    msg.DeviceStatus = op_type
+    msg.to_xml
+  end
+  
+  #msg.MsgType, msg.Event,msg.DeviceType,msg.DeviceID,msg.OpenID,0
+  def bind_msg(to,from,msg_type,event,device_type,device_id,session_id,content)
+    msg = BindMessage.new
+    msg.ToUserName   = to
+    msg.FromUserName = from
+    msg.CreateTime = Time.now.to_i
+    msg.MsgType   = msg_type
+    msg.Event = event
+    msg.DeviceType = device_type
+    msg.DeviceID = device_id
+    msg.SessionID = session_id
+    msg.Content = content
+    msg.to_xml
+  end
 end
